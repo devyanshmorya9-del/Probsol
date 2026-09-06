@@ -8,45 +8,89 @@
 <body>
 
     <nav>
-        <h2>Probsol</h2>
-        <p>Find problems. Build solutions.</p>
+        <div class="logo">
+            <span>✦</span>
+            <div>
+                <h2>Probsol</h2>
+                <p>Find problems. Build solutions.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Submissions</a>
+        </div>
     </nav>
 
+
     <main>
-        <h1>What's the most irritating problem<br>you face regularly?</h1>
+
+        <div class="badge">
+            💡 Real Problems. Better Solutions.
+        </div>
+
+        <h1>
+            What's the most <span>irritating</span> problem<br>
+            you face regularly?
+        </h1>
 
         <p class="description">
-            College ya daily life ki koi aisi problem jo baar-baar
-            irritate karti hai? Batao.
+            College ya daily life ki koi aisi problem jo baar-baar irritate karti hai?
+            <br>
+            Batao. Maybe someone can solve it.
         </p>
 
-        <button onclick="showForm()">Submit a Problem</button>
+        <button class="main-button" onclick="showForm()">
+            ✈ Submit a Problem <b>→</b>
+        </button>
+
 
         <div id="problemForm">
 
-            <h2>Tell us your problem</h2>
+            <div class="form-heading">
+                <div class="form-icon">▤</div>
 
-            <label>What's your problem?</label>
-            <textarea placeholder="Example: College mein study material alag-alag jagah milta hai..."></textarea>
+                <div>
+                    <h2>Tell us your problem</h2>
+                    <p>Fill in the details below. It'll only take a minute.</p>
+                </div>
+            </div>
 
-            <label>Where does this problem happen?</label>
+
+            <label>💬 What's your problem?</label>
+
+            <textarea
+                placeholder="Example: College mein study material alag-alag jagah milta hai..."
+            ></textarea>
+
+
+            <label>📍 Where does this problem happen?</label>
+
             <select>
+                <option>Select a category</option>
                 <option>College</option>
                 <option>Daily Life</option>
                 <option>Technology</option>
                 <option>Other</option>
             </select>
 
-            <label>How often does it happen?</label>
+
+            <label>▣ How often does it happen?</label>
+
             <select>
+                <option>Select frequency</option>
                 <option>Every day</option>
                 <option>Several times a week</option>
                 <option>Once a week</option>
                 <option>Occasionally</option>
             </select>
 
-            <label>How irritating is it?</label>
+
+            <label>☹ How irritating is it?</label>
+
             <select>
+                <option>Select level (1 - 5)</option>
                 <option>1 - Slightly irritating</option>
                 <option>2</option>
                 <option>3</option>
@@ -54,15 +98,38 @@
                 <option>5 - Extremely irritating</option>
             </select>
 
-            <button>Submit Problem</button>
+
+            <button class="submit-button">
+                ✈ Submit Problem
+            </button>
 
         </div>
 
     </main>
 
+
+    <footer>
+        <div>
+            <h2>✦ Probsol</h2>
+            <p>Find problems. Build solutions.</p>
+        </div>
+
+        <div class="footer-links">
+            <span>Home</span>
+            <span>About</span>
+            <span>Submissions</span>
+        </div>
+
+        <p>♥ Built for better ideas</p>
+    </footer>
+
+
     <script>
         function showForm() {
             document.getElementById("problemForm").style.display = "block";
+
+            document.getElementById("problemForm")
+                .scrollIntoView({ behavior: "smooth" });
         }
     </script>
 
