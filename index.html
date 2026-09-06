@@ -1,137 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Probsol</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probsol — Find Problems. Build Solutions.</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">
-            <span>✦</span>
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-mark">✦</div>
+
             <div>
-                <h2>Probsol</h2>
-                <p>Find problems. Build solutions.</p>
+                <div class="brand-name">Probsol</div>
+                <div class="brand-tagline">Find problems. Build solutions.</div>
             </div>
         </div>
 
-        <div class="links">
+        <nav class="nav-links">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Submissions</a>
-        </div>
-    </nav>
+            <a href="#about">About</a>
+            <a href="#submissions">Submissions</a>
+        </nav>
+
+    </header>
 
 
-    <main>
+    <!-- HERO -->
+    <section class="hero">
 
-        <div class="badge">
-            💡 Real Problems. Better Solutions.
-        </div>
+        <div class="blob blob-one"></div>
+        <div class="blob blob-two"></div>
 
-        <h1>
-            What's the most <span>irritating</span> problem<br>
-            you face regularly?
-        </h1>
+        <div class="hero-content">
 
-        <p class="description">
-            College ya daily life ki koi aisi problem jo baar-baar irritate karti hai?
-            <br>
-            Batao. Maybe someone can solve it.
-        </p>
-
-        <button class="main-button" onclick="showForm()">
-            ✈ Submit a Problem <b>→</b>
-        </button>
-
-
-        <div id="problemForm">
-
-            <div class="form-heading">
-                <div class="form-icon">▤</div>
-
-                <div>
-                    <h2>Tell us your problem</h2>
-                    <p>Fill in the details below. It'll only take a minute.</p>
-                </div>
+            <div class="badge">
+                <span>✦</span>
+                Real Problems. Better Solutions.
             </div>
 
+            <h1>
+                What's the most
+                <span>irritating</span>
+                problem<br>
+                you face regularly?
+            </h1>
 
-            <label>💬 What's your problem?</label>
+            <p>
+                College ya daily life ki koi aisi problem jo baar-baar irritate karti hai?
+                <br>
+                Batao. Maybe someone can solve it.
+            </p>
 
-            <textarea
-                placeholder="Example: College mein study material alag-alag jagah milta hai..."
-            ></textarea>
-
-
-            <label>📍 Where does this problem happen?</label>
-
-            <select>
-                <option>Select a category</option>
-                <option>College</option>
-                <option>Daily Life</option>
-                <option>Technology</option>
-                <option>Other</option>
-            </select>
-
-
-            <label>▣ How often does it happen?</label>
-
-            <select>
-                <option>Select frequency</option>
-                <option>Every day</option>
-                <option>Several times a week</option>
-                <option>Once a week</option>
-                <option>Occasionally</option>
-            </select>
-
-
-            <label>☹ How irritating is it?</label>
-
-            <select>
-                <option>Select level (1 - 5)</option>
-                <option>1 - Slightly irritating</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5 - Extremely irritating</option>
-            </select>
-
-
-            <button class="submit-button">
-                ✈ Submit Problem
+            <button class="primary-btn" onclick="openForm()">
+                Submit a Problem
+                <span>→</span>
             </button>
 
         </div>
 
-    </main>
+
+        <!-- DECORATIONS -->
+
+        <div class="scribble scribble-left">
+            ↗
+            <small>Tell us!</small>
+        </div>
+
+        <div class="scribble scribble-right">
+            <small>Every problem<br>matters.</small>
+            ✦
+        </div>
 
 
-    <footer>
-        <div>
-            <h2>✦ Probsol</h2>
+        <!-- FORM CARD -->
+
+        <div class="form-wrapper" id="problemForm">
+
+            <div class="form-card">
+
+                <div class="form-top">
+                    <div class="form-icon">✦</div>
+
+                    <div>
+                        <h2>Tell us your problem</h2>
+                        <p>It only takes a minute.</p>
+                    </div>
+                </div>
+
+
+                <label for="problem">What's your problem?</label>
+
+                <textarea
+                    id="problem"
+                    placeholder="Example: College mein study material alag-alag jagah milta hai..."
+                ></textarea>
+
+
+                <label for="category">Where does this problem happen?</label>
+
+                <select id="category">
+                    <option value="">Select a category</option>
+                    <option>College</option>
+                    <option>Daily Life</option>
+                    <option>Technology</option>
+                    <option>Travel</option>
+                    <option>Other</option>
+                </select>
+
+
+                <label for="frequency">How often does it happen?</label>
+
+                <select id="frequency">
+                    <option value="">Select frequency</option>
+                    <option>Every day</option>
+                    <option>Several times a week</option>
+                    <option>Once a week</option>
+                    <option>Occasionally</option>
+                </select>
+
+
+                <label for="irritation">How irritating is it?</label>
+
+                <select id="irritation">
+                    <option value="">Select level</option>
+                    <option>1 — Slightly irritating</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 — Extremely irritating</option>
+                </select>
+
+
+                <button class="submit-btn" onclick="submitProblem()">
+                    Submit Problem →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOWER SECTION -->
+
+    <section class="info-section" id="about">
+
+        <div class="info-card">
+            <div class="info-number">01</div>
+            <h3>Share a problem</h3>
+            <p>
+                Tell us about something that regularly annoys you
+                in college or everyday life.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-number">02</div>
+            <h3>Find patterns</h3>
+            <p>
+                We look for problems that many people experience
+                again and again.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-number">03</div>
+            <h3>Explore ideas</h3>
+            <p>
+                Common problems can become interesting projects,
+                experiments and solutions.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="submissions">
+
+        <div class="footer-brand">
+            <div class="footer-logo">✦ Probsol</div>
             <p>Find problems. Build solutions.</p>
         </div>
 
         <div class="footer-links">
-            <span>Home</span>
-            <span>About</span>
-            <span>Submissions</span>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#submissions">Submissions</a>
         </div>
 
-        <p>♥ Built for better ideas</p>
+        <div class="footer-copy">
+            © 2026 Probsol
+        </div>
+
     </footer>
 
 
     <script>
-        function showForm() {
-            document.getElementById("problemForm").style.display = "block";
 
-            document.getElementById("problemForm")
-                .scrollIntoView({ behavior: "smooth" });
+        function openForm() {
+
+            const form = document.getElementById("problemForm");
+
+            form.classList.add("show");
+
+            setTimeout(function () {
+                form.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 100);
+
         }
+
+
+        function submitProblem() {
+
+            const problem = document.getElementById("problem").value;
+
+            if (problem.trim() === "") {
+                alert("Please tell us your problem.");
+                return;
+            }
+
+            alert("Thanks! Your problem has been recorded.");
+
+        }
+
     </script>
 
 </body>
 </html>
+            
