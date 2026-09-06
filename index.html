@@ -17,11 +17,54 @@
 
         <p class="description">
             College ya daily life ki koi aisi problem jo baar-baar
-            irritate karti hai? Batao. Maybe someone can solve it.
+            irritate karti hai? Batao.
         </p>
 
-        <button>Submit a Problem</button>
+        <button onclick="showForm()">Submit a Problem</button>
+
+        <div id="problemForm">
+
+            <h2>Tell us your problem</h2>
+
+            <label>What's your problem?</label>
+            <textarea placeholder="Example: College mein study material alag-alag jagah milta hai..."></textarea>
+
+            <label>Where does this problem happen?</label>
+            <select>
+                <option>College</option>
+                <option>Daily Life</option>
+                <option>Technology</option>
+                <option>Other</option>
+            </select>
+
+            <label>How often does it happen?</label>
+            <select>
+                <option>Every day</option>
+                <option>Several times a week</option>
+                <option>Once a week</option>
+                <option>Occasionally</option>
+            </select>
+
+            <label>How irritating is it?</label>
+            <select>
+                <option>1 - Slightly irritating</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 - Extremely irritating</option>
+            </select>
+
+            <button>Submit Problem</button>
+
+        </div>
+
     </main>
+
+    <script>
+        function showForm() {
+            document.getElementById("problemForm").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
