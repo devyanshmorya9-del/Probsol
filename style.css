@@ -1,0 +1,547 @@
+/* ==========================================================================
+   Global Resets & Color Palette
+   ========================================================================== */
+:root {
+  --bg-main: #f5f6fa;
+  --bg-card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --primary-blue: #3b82f6;
+  --primary-blue-hover: #2563eb;
+  --accent-pill-bg: #eff6ff;
+  --accent-pill-text: #2563eb;
+  --dark-btn: #111827;
+  --dark-btn-hover: #1f2937;
+  --border-light: #e5e7eb;
+  --border-focus: #3b82f6;
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.star-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--text-main);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--text-main);
+  padding-bottom: 2px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding: 3rem 1.5rem 6rem 1.5rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Background Gradients */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blob-top-right {
+  top: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: rgba(199, 210, 254, 0.4);
+}
+
+.blob-bottom-left {
+  bottom: 100px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(219, 234, 254, 0.5);
+}
+
+/* Badge Pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-pill-bg);
+  color: var(--accent-pill-text);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.bulb-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Typography */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.highlight-blue {
+  color: var(--primary-blue);
+}
+
+.hero-subtext {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+/* Hero CTA Button */
+.hero-cta-wrapper {
+  margin-bottom: 3.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--dark-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-btn-hover);
+  transform: translateY(-1px);
+}
+
+.send-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.arrow-right {
+  margin-left: 0.2rem;
+}
+
+/* Handwritten Element (Left) */
+.handwritten-annotation {
+  position: absolute;
+  top: 140px;
+  left: -110px;
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  color: #7c8ba1;
+  line-height: 1.1;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.handdrawn-arrow {
+  width: 45px;
+  height: 35px;
+  margin-top: 5px;
+  margin-left: 30px;
+  color: #7c8ba1;
+}
+
+/* Doodle Element (Right) */
+.doodle-bulb {
+  position: absolute;
+  top: 150px;
+  right: -90px;
+  width: 65px;
+  height: 65px;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Form Card Section
+   ========================================================================== */
+.form-card-container {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: var(--card-shadow);
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: #e0e7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.form-header-text h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.form-header-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.field-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-blue);
+}
+
+.textarea-wrapper,
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea::placeholder {
+  color: var(--text-light);
+}
+
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.char-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--text-muted);
+  pointer-events: none;
+}
+
+select:required:invalid {
+  color: var(--text-light);
+}
+
+option {
+  color: var(--text-main);
+}
+
+.btn-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--dark-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--dark-btn-hover);
+}
+
+/* Success Banner */
+.success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.success-message svg {
+  width: 24px;
+  height: 24px;
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.success-message h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.success-message p {
+  font-size: 0.85rem;
+  color: #047857;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background-color: #0d131f;
+  color: #ffffff;
+  padding: 2.5rem 2rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand .brand-title {
+  color: #ffffff;
+}
+
+.footer-brand .brand-tagline {
+  color: #9ca3af;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-tag {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.heart-icon {
+  color: #ef4444;
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 900px) {
+  .handwritten-annotation,
+  .doodle-bulb {
+    display: none; /* Hide doodles on smaller viewports to prevent overlap */
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtext {
+    font-size: 0.95rem;
+  }
+  
+  .form-card {
+    padding: 1.5rem;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
