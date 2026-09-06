@@ -1,87 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #222;
+    background: #f6f7f9;
+    color: #18181b;
 }
 
 nav {
-    padding: 20px 50px;
+    padding: 18px 7%;
     background: white;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 nav h2 {
     margin: 0;
+    font-size: 24px;
 }
 
 nav p {
-    margin: 5px 0 0;
-    color: #666;
+    margin: 4px 0 0;
+    color: #71717a;
+    font-size: 14px;
 }
 
 main {
     text-align: center;
-    padding: 120px 20px;
+    padding: 90px 20px;
 }
 
 h1 {
     font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 20px;
 }
 
 .description {
-    max-width: 600px;
-    margin: 20px auto;
-    color: #666;
-    font-size: 18px;
+    max-width: 620px;
+    margin: 0 auto 25px;
+    color: #71717a;
+    font-size: 17px;
     line-height: 1.6;
 }
 
 button {
-    padding: 14px 25px;
+    padding: 13px 22px;
     border: none;
     border-radius: 8px;
-    background: #222;
+    background: #18181b;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 }
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Problem Form */
+
 #problemForm {
     display: none;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px;
+    max-width: 550px;
+    margin: 45px auto 0;
+    padding: 30px;
     background: white;
-    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
     text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 #problemForm h2 {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
 #problemForm label {
     display: block;
     margin-top: 18px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 #problemForm textarea,
 #problemForm select {
     width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
 }
 
 #problemForm textarea {
-    height: 100px;
+    height: 110px;
     resize: vertical;
 }
 
 #problemForm button {
     display: block;
     margin: 25px auto 0;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 70px 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    #problemForm {
+        padding: 22px;
+    }
 }
