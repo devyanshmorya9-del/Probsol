@@ -46,3 +46,42 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+#problemForm {
+    display: none;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#problemForm h2 {
+    text-align: center;
+}
+
+#problemForm label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#problemForm textarea,
+#problemForm select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#problemForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#problemForm button {
+    display: block;
+    margin: 25px auto 0;
+}
